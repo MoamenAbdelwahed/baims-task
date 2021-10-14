@@ -1,6 +1,7 @@
 # Problem
 
-Write a program that can price a cart of products, accept multiple products, combine offers, and display a total detailed bill in different currencies (based on user selection).
+We have two providers collect data from them in json files we need to read and make some filter
+operations on them to get the result.
 
 # Architecture
 - Domain Driven Desing
@@ -31,13 +32,6 @@ Write a program that can price a cart of products, accept multiple products, com
 - run the project
 `php -S localhost:8001 -t public`
 
-# Test
-You can hit a post request to 'http://localhost:8001/api/v1/cart'
-with json body includes "productIds" array and optional "currency" string like "EGP"
-
 # To do list
-- enhance offers module to accep more types of offers
 - unit testing
 - seeds
-- save users carts
-- better response details when user request the cart price
