@@ -22,20 +22,25 @@ class DataProviderXRepository implements RepositoryInterface
                 if (isset($filters['statusCode']) && !empty($filters['statusCode'])) {
                     if ($filters['statusCode'] == 'authorised' && $jsonObject['statusCode'] == '1') {
                         array_push($result, $jsonObject);
+                        continue;
                     } elseif ($filters['statusCode'] == 'decline' && $jsonObject['statusCode'] == '2') {
                         array_push($result, $jsonObject);
+                        continue;
                     } elseif ($filters['statusCode'] == 'refunded' && $jsonObject['statusCode'] == '3') {
                         array_push($result, $jsonObject);
+                        continue;
                     }
                 }
                 if (isset($filters['balanceMin']) && !empty($filters['balanceMin'])) {
                     if (intval($jsonObject['parentAmount']) >= intval($filters['balanceMin'])) {
                         array_push($result, $jsonObject);
+                        continue;
                     }
                 }
                 if (isset($filters['balanceMax']) && !empty($filters['balanceMax'])) {
                     if (intval($jsonObject['parentAmount']) <= intval($filters['balanceMax'])) {
                         array_push($result, $jsonObject);
+                        continue;
                     }
                 }
                 if (isset($filters['currency']) && !empty($filters['currency'])) {
